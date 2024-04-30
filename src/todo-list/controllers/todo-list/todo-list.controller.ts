@@ -11,6 +11,11 @@ export class TodoListController {
         return this.service.get();
     }
 
+    @Get(':id')
+    getOneTodoList(@Param('id', ParseIntPipe) id: number) {
+        return this.service.findOne(id);
+    }
+
     @Post()
     createTodoList(@Body() details: TodoListDetails) {
         return this.service.create(details);

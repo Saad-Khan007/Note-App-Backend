@@ -5,11 +5,11 @@ export class TodoList {
     @PrimaryGeneratedColumn({ type: 'bigint' })
     id: number;
 
-    @Column({ unique: true })
+    @Column()
     title: string;
 
     @Column()
-    description: string;
+    body: string;
 
     @Column()
     createdAt: Date;

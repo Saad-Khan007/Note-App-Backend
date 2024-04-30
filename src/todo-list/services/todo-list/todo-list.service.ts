@@ -8,6 +8,10 @@ import { Repository } from 'typeorm';
 export class TodoListService {
     constructor(@InjectRepository(TodoList) private repo: Repository<TodoList>) { }
 
+    findOne(id: number) {
+        return this.repo.findOneBy({ id });
+    }
+
     get() {
         return this.repo.find();
     }
